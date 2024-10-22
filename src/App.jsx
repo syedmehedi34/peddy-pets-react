@@ -20,12 +20,26 @@ function App() {
 
   //-----------------------------
   //-----------------------------
+  // get the fetched data from PetCards
+  const [petsList, setPetsList] = useState([]);
+  const getPetsData = (petData) => {
+    console.log(petData);
+
+    const sortedPets = petData.sort((a, b) => {
+      const priceA = a.price !== null ? a.price : 0;
+      const priceB = b.price !== null ? b.price : 0;
+      return priceB - priceA;
+    });
+    setPetsList(sortedPets);
+    // console.log(sortedPets);
+  };
 
   const [sortedPets, setSortedPets] = useState([]);
   const handleSortByPrice = () => {
     console.log("clicked");
   };
 
+  //____________________________________________
   //____________________________________________
   return (
     <div>
@@ -44,6 +58,8 @@ function App() {
           <PetCards
             handleSelectPet={handleSelectPet}
             searchedPet={searchedPet}
+            getPetsData={getPetsData}
+            petsList={petsList}
           ></PetCards>
           <PetSelected selected={selected}></PetSelected>
         </section>

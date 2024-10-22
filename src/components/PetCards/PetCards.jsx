@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import PetCard from "../PetCard/PetCard";
 
-const PetCards = ({ handleSelectPet, searchedPet }) => {
+const PetCards = ({ handleSelectPet, searchedPet, getPetsData, petsList }) => {
   const [pets, setPets] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +17,8 @@ const PetCards = ({ handleSelectPet, searchedPet }) => {
         .then((res) => res.json())
         .then((data) => {
           setPets(data.data); // Set fetched data
+          getPetsData(data.data);
+          console.log(data.data);
 
           // Wait for 2 seconds (or any duration you want)
           setTimeout(() => {
@@ -27,6 +30,8 @@ const PetCards = ({ handleSelectPet, searchedPet }) => {
         .then((res) => res.json())
         .then((data) => {
           setPets(data.pets); // Set fetched data
+          getPetsData(data.pets);
+          // console.log(pets);
 
           // Wait for 2 seconds (or any duration you want)
           setTimeout(() => {
@@ -45,7 +50,7 @@ const PetCards = ({ handleSelectPet, searchedPet }) => {
   }
 
   if (pets.length) {
-    console.log(pets.length);
+    // console.log(pets.length);
     return (
       <div className="h-fit col-span-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
