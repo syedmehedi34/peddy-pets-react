@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "./App.css";
 import AdoptBestFriend from "./components/AdoptBestFriend/AdoptBestFriend";
-import BestDeal from "./components/bestDeal/BestDeal";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Narbar/Navbar";
 import PetCards from "./components/PetCards/PetCards";
@@ -12,21 +12,21 @@ function App() {
   //
   // PetSelected options starts
   const [selected, setSelected] = useState([]);
-  const handleSelectPet = (pet) => {
-    // console.log(pet);
-    const newSelected = [...selected, pet];
-    setSelected(newSelected);
-  };
-  // PetSelected options ends
+  const handleSelectPet = (pet) => setSelected([...selected, pet]);
 
   // category search starts
   const [searchedPet, setSearchedPet] = useState("");
-  const handleSearchPet = (category) => {
-    setSearchedPet(category);
-  };
-  // category search starts
+  const handleSearchPet = (category) => setSearchedPet(category);
 
   //-----------------------------
+  //-----------------------------
+
+  const [sortedPets, setSortedPets] = useState([]);
+  const handleSortByPrice = () => {
+    console.log("clicked");
+  };
+
+  //____________________________________________
   return (
     <div>
       <header className="w-11/12 mx-auto">
@@ -34,11 +34,13 @@ function App() {
       </header>
       <main className="w-11/12 mx-auto">
         <Hero></Hero>
-        <AdoptBestFriend handleSearchPet={handleSearchPet}></AdoptBestFriend>
-        <BestDeal></BestDeal>
+        <AdoptBestFriend
+          handleSearchPet={handleSearchPet}
+          handleSortByPrice={handleSortByPrice}
+        ></AdoptBestFriend>
 
         {/* adoption cards section  */}
-        <section className="grid grid-cols-1 md:grid-cols-11 gap-5 mb-16">
+        <section className="grid grid-cols-1 md:grid-cols-11 gap-5 my-16">
           <PetCards
             handleSelectPet={handleSelectPet}
             searchedPet={searchedPet}

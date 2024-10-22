@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PetCard from "../PetCard/PetCard";
 
 const PetCards = ({ handleSelectPet, searchedPet }) => {
-  // console.log(searchedPet);
+  // console.log(handlePetsData);
   const [pets, setPets] = useState([]);
   useEffect(() => {
     if (searchedPet) {
