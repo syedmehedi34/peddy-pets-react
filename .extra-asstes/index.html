@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+    <link rel="shortcut icon" href="assets/fav-icon.png" type="image/x-icon" />
+    <!-- cdn starts  -->
+    <!-- daisyUI  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0E7A81",
+              first: "#131313",
+              first70: "#131313B3",
+              first60: "#13131399",
+            },
+            fontFamily: {
+              Lato: "Lato",
+              Inter: "Inter",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!--  <body class="font-lexend"> -->
+
+    <!-- cdn ends  -->
+  </head>
+  <!-- 
+  
+  -->
+  <body class="font-Lato">
+    <!--  -->
+
+    <main class="w-11/12 mx-auto">
+      <!--  -->
+      <section id="adopt-best-friend" class="mt-20">
+        <!-- sec adopt your best friend section starts  -->
+
+        <!-- sec best deal for you starts  -->
+        <section class="mt-8">
+          <div class="flex justify-between items-center mb-8">
+            <p class="text-first text-[1.34rem] font-[900]">
+              Best Deal For you
+            </p>
+            <div
+              id="sort-button"
+              class="btn min-h-0 h-full bg-primary w-fit px-8 py-4 rounded-xl"
+            >
+              <p class="text-white font-bold md:text-lg">Sort by Price</p>
+            </div>
+          </div>
+
+          <!-- spinner  -->
+          <div id="spinner" class="w-fit mx-auto hidden">
+            <span
+              class="loading loading-dots loading-lg flex justify-center items-center"
+            ></span>
+          </div>
+
+          <!-- * pet cards section  starts -->
+          <section
+            id="pets-section"
+            class="flex gap-6 flex-col md:flex-row items-center md:items-start"
+          >
+            <!-- left container starts [ pets will be added here ] -->
+            <div
+              id="pets-card-container"
+              class="grid gap-6 max-[840px]:grid-cols-1 max-[1240px]:grid-cols-2 min-[1240px]:grid-cols-3 md:w-[72%] min-[580px]:w-2/3 w-5/6 mx-auto h-fit"
+            >
+              <!-- * -->
+
+              <!-- the  cards will be here  -->
+
+              <!-- * -->
+            </div>
+            <!-- left container ends  -->
+
+            <!-- right container starts  -->
+            <div
+              id="picked-photo-container"
+              class="w-3/4 md:w-1/4 h-fit border border-[#1313131A] rounded-xl p-5 grid grid-cols-2 grid-rows-2 items-start justify-items-center gap-5 min-h-[250px]"
+            ></div>
+            <!-- right container ends  -->
+          </section>
+
+          <!-- ? countdown modal  -->
+          <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+            <div class="flex items-center justify-center h-full space-y-3">
+              <div class="bg-white p-10 rounded-lg shadow-lg">
+                <div class="w-fit mx-auto">
+                  <img src="assets/handshake.png" alt="" />
+                </div>
+                <p class="text-first text-[24px] text-center font-extrabold">
+                  Congrates
+                </p>
+                <p class="text-first text-center py-2">
+                  Adoption Process is Start For your Pet
+                </p>
+
+                <p id="countdown" class="text-center text-5xl font-bold">3</p>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <!-- s -->
+
+          <!-- * pet cards section  ends -->
+        </section>
+        <!-- sec best deal for you ends  -->
+      </section>
+      <!-- 
+    *    all done   ends    .
+    -->
+      <!--  -->
+    </main>
+
+    <footer class="footer bg-neutral text-neutral-content p-10 mt-10">
+      <nav>
+        <div class="flex items-center gap-3 mb-5 text-xl">
+          <i class="fa-solid fa-paw text-primary text-[30px]"></i>
+          <p class="text-[#9399A2] text-[2rem]">Peddy</p>
+        </div>
+        <a class="link link-hover">Location: av. Washington 165, NY CA 54003</a>
+        <a class="link link-hover">Phone: +31 85 964 47 25</a>
+        <a class="link link-hover"> Email: info@yourdomain.com</a>
+        <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+        <div class="flex gap-4 items-center mt-3">
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/48/facebook-new.png"
+            alt="facebook-new"
+          />
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/48/twitterx--v2.png"
+            alt=""
+          />
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/color/48/youtube-play.png"
+            alt="youtube-play"
+          />
+          <img
+            width="30"
+            height="30"
+            src="https://img.icons8.com/fluency/96/instagram-new.png"
+            alt="instagram-new"
+          />
+        </div>
+      </nav>
+      <nav>
+        <h6 class="footer-title mb-4 font-Inter">Useful Links</h6>
+        <a class="link link-hover">Home</a>
+        <a class="link link-hover">About Us</a>
+        <a class="link link-hover">Animals</a>
+        <a class="link link-hover">Foundation</a>
+        <a class="link link-hover">Contact</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title mb-4 font-Inter">Drop a Message</h6>
+        <label
+          class="input input-bordered bg-[#9399A2] flex items-center gap-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            class="h-4 w-4 opacity-70"
+          >
+            <path
+              d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z"
+            />
+            <path
+              d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z"
+            />
+          </svg>
+          <input
+            type="text"
+            class="grow placeholder:text-[#C3C9D0]"
+            placeholder="Email"
+          />
+        </label>
+        <button
+          class="text-white font-semibold text-[20px] btn bg-primary border-none hover:bg-primary w-full mt-4"
+        >
+          Subscribe
+        </button>
+      </nav>
+    </footer>
+    <!-- 
+         script 
+    -->
+    <script src="js/index.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/loadCards.js"></script>
+    <script src="js/buttonFunctions.js"></script>
+    <script src="js/price.js"></script>
+  </body>
+</html>

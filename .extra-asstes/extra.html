@@ -1,0 +1,70 @@
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <!--  -->
+    <!--  -->
+    <section id="modal-container">
+      <div class="h-[250px] w-full rounded-lg">
+        <img
+          class="h-full w-full object-cover rounded-lg"
+          src="${pet.image}"
+          alt=""
+        />
+      </div>
+      <h1 class="text-first text-[22px] font-bold mt-5 mb-2">
+        ${pet.pet_name ? pet.pet_name : "Not mentioned"}
+      </h1>
+
+      <!-- main div  -->
+      <div class="flex items-start gap-10">
+        <!-- left div  -->
+        <div class="space-y-2">
+          <div class="text-first70 text-[1rem] flex items-center gap-2">
+            <i class="fa-solid fa-qrcode"></i>
+            <p class="text-first70">
+              Breed: ${ pet.breed ? pet.breed : "Not mentioned" }
+            </p>
+          </div>
+          <div class="text-first70 text-[1rem] flex items-center gap-2">
+            <i class="fa-solid fa-mercury"></i>
+            <p>Gender: ${ pet.gender ? pet.gender : "Not mentioned" }</p>
+          </div>
+          <div class="text-first70 text-[1rem] flex items-center gap-2">
+            <i class="fa-solid fa-syringe"></i>
+            <p class="text-first70">
+              Vaccinated status: ${ pet.vaccinated_status ?
+              pet.vaccinated_status : "Not mentioned" }
+            </p>
+          </div>
+        </div>
+
+        <!-- right div  -->
+        <div class="space-y-2">
+          <div class="text-first70 text-[1rem] flex items-center gap-2">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>
+              Birth: ${ pet.date_of_birth ? pet.date_of_birth : "Not mentioned"
+              }
+            </p>
+          </div>
+          <div class="text-first70 text-[1rem] flex items-center gap-2">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <p>Price : ${ pet.price ? pet.price + " $" : "Negotiable" }</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t my-4 border-[#1313131A]"></div>
+      <h1 class="text-first font-semibold mb-3">Details Information</h1>
+      <p class="text-first70">
+        ${pet.pet_details ? pet.pet_details : "Not mentioned"}
+      </p>
+    </section>
+    <!--     -->
+    <div class="modal-action">
+      <form method="dialog" class="w-full">
+        <button class="btn w-full border border-[#0E7A8133] bg-[#0E7A811A]">
+          Close
+        </button>
+      </form>
+    </div>
+  </div>
+</dialog>
