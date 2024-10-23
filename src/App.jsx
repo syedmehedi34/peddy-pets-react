@@ -20,25 +20,14 @@ function App() {
 
   //-----------------------------
   //-----------------------------
-  // get the fetched data from PetCards
-  const [petsList, setPetsList] = useState([]);
-  const getPetsData = (petData) => {
-    console.log(petData);
+  const [pets, setPets] = useState([]);
 
-    const sortedPets = petData.sort((a, b) => {
-      const priceA = a.price !== null ? a.price : 0;
-      const priceB = b.price !== null ? b.price : 0;
-      return priceB - priceA;
-    });
-    setPetsList(sortedPets);
-    // console.log(sortedPets);
+  //
+  const handleSort = () => {
+    // console.log("click");
+    const sorted = [...pets].sort((a, b) => b.price - a.price);
+    setPets(sorted);
   };
-
-  const [sortedPets, setSortedPets] = useState([]);
-  const handleSortByPrice = () => {
-    console.log("clicked");
-  };
-
   //____________________________________________
   //____________________________________________
   return (
@@ -48,18 +37,15 @@ function App() {
       </header>
       <main className="w-11/12 mx-auto">
         <Hero></Hero>
-        <AdoptBestFriend
-          handleSearchPet={handleSearchPet}
-          handleSortByPrice={handleSortByPrice}
-        ></AdoptBestFriend>
+        <AdoptBestFriend handleSort={handleSort}></AdoptBestFriend>
 
         {/* adoption cards section  */}
         <section className="grid grid-cols-1 md:grid-cols-11 gap-5 my-16">
           <PetCards
             handleSelectPet={handleSelectPet}
             searchedPet={searchedPet}
-            getPetsData={getPetsData}
-            petsList={petsList}
+            pets={pets}
+            setPets={setPets}
           ></PetCards>
           <PetSelected selected={selected}></PetSelected>
         </section>

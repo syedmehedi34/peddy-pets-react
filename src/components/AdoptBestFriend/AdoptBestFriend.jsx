@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Category from "../Category/Category";
 
-const AdoptBestFriend = ({ handleSearchPet, handleSortByPrice }) => {
+const AdoptBestFriend = ({ handleSearchPet, handleSort }) => {
   // console.log(handleSortByPrice);
   //
   //   fetch the categories
@@ -35,7 +35,7 @@ const AdoptBestFriend = ({ handleSearchPet, handleSortByPrice }) => {
           </p>
           <div
             onClick={() => {
-              handleSortByPrice();
+              handleSort();
             }}
             className="btn min-h-0 h-full bg-primary w-fit px-8 py-4 rounded-xl"
           >

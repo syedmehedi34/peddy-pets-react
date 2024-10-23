@@ -1,10 +1,17 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react";
 import PetCard from "../PetCard/PetCard";
 
-const PetCards = ({ handleSelectPet, searchedPet, getPetsData, petsList }) => {
-  const [pets, setPets] = useState([]);
+const PetCards = ({
+  handleSelectPet,
+  searchedPet,
+  getPetsData,
+  pets,
+  setPets,
+}) => {
+  // const [pets, setPets] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,8 +24,8 @@ const PetCards = ({ handleSelectPet, searchedPet, getPetsData, petsList }) => {
         .then((res) => res.json())
         .then((data) => {
           setPets(data.data); // Set fetched data
-          getPetsData(data.data);
-          console.log(data.data);
+
+          console.log(pets);
 
           // Wait for 2 seconds (or any duration you want)
           setTimeout(() => {
@@ -30,8 +37,8 @@ const PetCards = ({ handleSelectPet, searchedPet, getPetsData, petsList }) => {
         .then((res) => res.json())
         .then((data) => {
           setPets(data.pets); // Set fetched data
-          getPetsData(data.pets);
-          // console.log(pets);
+
+          console.log(pets);
 
           // Wait for 2 seconds (or any duration you want)
           setTimeout(() => {
